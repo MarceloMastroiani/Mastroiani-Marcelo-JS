@@ -4,8 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- CSS BOOTSTRAP -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/stilos.css">
+
+<style>
+    body{
+        background-color: beige;
+        
+    }
+
+    .contenedorDatos{
+        height: 300px;
+    }
+
+
+    .conteTabla{
+        background-color: black;
+        height: 300px;
+    }
+    td{
+        height: 70px;
+    }
+    h1{
+        padding-top: 100px;
+    }
+</style>
+
 </head>
-<body>
+
+
+<body> 
+<div class=" d-flex flex-column align-items-center">
+    <h1>SIMULADOR DE PRESTAMOS</h1>
+    <!-- INGRESO DE DATOS -->
+    <section class="d-flex justify-content-center align-items-center contenedorDatos">
+        
+        <form class="d-flex flex-column align-items-end formulario">
+
+            <div class="pb-2">
+                <label for="">Monto:</label>
+                <input type="number" id="montoPrestamo">
+            </div>
+
+            <div>
+                <label for="">Cuotas:</label>
+                <input type="number" id="cuotasPrestamo">
+            </div>
+        </form>
+
+        <div class="d-flex flex-column mx-4">
+            <button onClick="guardarDatos()" class="mb-2">calcular total del prestamo</button>
+            <button onClick="calPorMes()" class="mb-2">Calcular pago por mes</button>
+            <button onClick="mostrarDatos()">Mostrar datos</button>
+        </div>
+        
+    </section>
+
+    <div id="mostrarDni">
+        <p></p>
+    </div>
+    <!-- TABLA DE PRESTAMO -->
+    <section class="d-flex ">
+
+            <table class="table table-dark">
+                    <tr class="">
+                        <td>MONTO</td>
+                        <td>CUOTAS</td>
+                        <td>PAGO POR MES</td>
+                        <td>TOTAL DEL PRESTAMO</td>
+                    </tr>
+                <tbody id="tbody"></tbody>
+            </table>
+            
+    </section>
+
+</div>
+
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/prestamo.js"></script>
 </body>
 </html>
