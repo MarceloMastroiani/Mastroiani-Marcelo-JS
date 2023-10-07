@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- SWEETALERT2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+
+    <!-- CSS BOOTSTRAP -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/stilos.css">
+
+<style>
+    body{
+        background-color: beige;
+    }
+    .contenedorTotal{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "titulo titulo"
+        "datos datos"
+        "tabla clima";
+        column-gap: 10px;
+    }
+    .tituloPrincipal{
+        grid-area: titulo;
+        justify-self: center;
+    }
+    .contenedorDatos{
+        grid-area: datos ;
+        padding-bottom: 150px;
+        
+    }
+    .tablaPres{
+        grid-area: tabla;
+        border: 3px solid black;
+        background-color: grey;
+        padding-bottom: 100px;
+    }
+    .apiClima{
+        grid-area: clima;
+        border: 3px solid black;
+        background-color: grey;
+    }
+    h2{
+        color: azure;
+    }
+
+</style>
+
+</head>
+
+
+<body> 
+    
+<div class=" contenedorTotal "><!-- d-flex flex-column align-items-center contenedorTotal -->
+        <h1 class=" d-flex align-items-center tituloPrincipal">SIMULADOR DE PRESTAMOS</h1>
+    <!-- INGRESO DE DATOS -->
+
+    <section class="d-flex justify-content-center align-items-center  contenedorDatos"> <!--d-flex justify-content-center align-items-center  -->
+        
+
+        <form class="d-flex flex-column align-items-end formulario"> <!-- d-flex flex-column align-items-end-->
+            
+
+            <div class="pb-2">
+                <label for="">Monto:</label>
+                <input type="number" id="montoPrestamo">
+            </div>
+
+            <div>
+                <label for="">Cuotas:</label>
+                <input type="number" id="cuotasPrestamo">
+            </div>
+
+            <button onClick="borrardatos()" class="mt-2">Borrar datos anteriores</button>
+        </form>
+
+        <div class="d-flex flex-column mx-4"> <!--d-flex flex-column mx-4 -->
+            <button onClick="guardarDatos()" class="mb-2">calcular total del prestamo</button>
+            <button onClick="calPorMes()" class="mb-2">Calcular pago por mes</button>
+            <button onClick="mostrarDatos()">Mostrar datos</button>
+        </div>
+        
+    </section>
+
+    <!-- TABLA DE PRESTAMO -->
+    <section class=" tablaPres">
+
+            <table class="table table-dark">
+                    <tr>
+                        <td>MONTO</td>
+                        <td>CUOTAS</td>
+                        <td>PAGO POR MES</td>
+                        <td>TOTAL DEL PRESTAMO</td>
+                    </tr>
+                <tbody id="tbodyPres"></tbody>
+            </table>
+            
+    </section>
+
+
+    <!-- API -->
+<article class="apiClima"> <!-- d-flex flex-column align-items-center -->
+    <h2 class="d-flex justify-content-center pb-3">ACA VA LA API</h2>
+    <div>
+        <table class="table table-dark">
+            <tr class=""> 
+                <td>TEMPERATURA</td>
+                <td>HUMEDAD</td>
+                <td>NUBES</td>
+                <td>LOCALIDAD</td>
+            </tr>
+        <tbody id="tbodyApi"></tbody>
+    </table>
+    </div>
+</section>
+</div>
+
+
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prestamo.js"></script>
+</body>
+</html>
