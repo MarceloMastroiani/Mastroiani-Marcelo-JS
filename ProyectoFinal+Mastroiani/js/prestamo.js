@@ -5,8 +5,6 @@ let listaDatos = [];
 let resultadoPrestamo = 0;
 let resultadoPorMes = 0;
 
-//mostrarDatosApi()
-
 function guardarDatos(){
 
 let monto = document.getElementById("montoPrestamo");
@@ -58,7 +56,7 @@ function borrardatos(){
 //FUNCION PARA CALCULAR EL INTERES DEL PRESTAMO//
 function calcular(){
 
-JSON.parse(localStorage.getItem("listaDatos"));//let lista =
+JSON.parse(localStorage.getItem("listaDatos"));
 let monto = document.getElementById("montoPrestamo").value;
 let cuotas = document.getElementById("cuotasPrestamo").value;
 
@@ -94,7 +92,7 @@ Swal.fire({
 //FUNCION PARA SACAR LAS CUOTAS QUE SE DEVEN PAGAR POR MES//
 function calPorMes(){
 
-JSON.parse(localStorage.getItem("listaDatos"));//let lista =
+JSON.parse(localStorage.getItem("listaDatos"));
 let monto = document.getElementById("montoPrestamo").value;
 let cuotas = document.getElementById("cuotasPrestamo").value;
 
