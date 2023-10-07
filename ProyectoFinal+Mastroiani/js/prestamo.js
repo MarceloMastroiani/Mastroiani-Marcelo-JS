@@ -58,7 +58,7 @@ function borrardatos(){
 //FUNCION PARA CALCULAR EL INTERES DEL PRESTAMO//
 function calcular(){
 
-let lista = JSON.parse(localStorage.getItem("listaDatos"));
+JSON.parse(localStorage.getItem("listaDatos"));//let lista =
 let monto = document.getElementById("montoPrestamo").value;
 let cuotas = document.getElementById("cuotasPrestamo").value;
 
@@ -88,21 +88,13 @@ Swal.fire({
     text:"LAS CUOTAS PERMITIDAS SON DE (3 , 6 ,12 ,24) BORRE LOS DATOS ANTERIORES Y VUELVA A INTRODUCIRLOS",
     icon:"error",
 })
-/*
-let alertaDiv = document.getElementById("alertaDiv")
 
-let alerta = document.createElement("p");
-alerta.innerHTML = `<p>LAS CUOTAS PERMITIDAS SON DE 3 , 6 ,12 ,24.
-                    BORRE LOS DATOS ANTERIORES Y VUELVA A INTRODUCIRLOS</p>`
-
-alertaDiv.append(alerta)
-*/
 }
 
 //FUNCION PARA SACAR LAS CUOTAS QUE SE DEVEN PAGAR POR MES//
 function calPorMes(){
 
-let lista = JSON.parse(localStorage.getItem("listaDatos"));
+JSON.parse(localStorage.getItem("listaDatos"));//let lista =
 let monto = document.getElementById("montoPrestamo").value;
 let cuotas = document.getElementById("cuotasPrestamo").value;
 
